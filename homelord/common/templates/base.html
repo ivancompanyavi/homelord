@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

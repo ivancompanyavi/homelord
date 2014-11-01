@@ -1,0 +1,19 @@
+{
+  "name": "homelord",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ivangoblin/homelord",
+  "authors": [
+    "Ivan Company <pyivanc@gmail.com>"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.0"
+  }
+}
