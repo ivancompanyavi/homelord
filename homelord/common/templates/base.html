@@ -3,8 +3,30 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
         <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}"/>
     </head>
     <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'main' %}">HomeLord</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'finances' %}">Finances</a></li>
+                    <li><a href="{% url 'search' %}">Search</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
         {% block content %}
         {% endblock %}
     </body>
